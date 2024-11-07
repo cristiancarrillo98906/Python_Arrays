@@ -81,14 +81,83 @@ while indice < len(listaR): # Recorrer ejemplo con while
     print(listaR[indice])
     indice += 1
 
+
+
 print(ejercicio3())
+#print(ejercicio4())
+
+
 #########################################################################
-# Matrices
+# Matrices (filas x columnas)
 #########################################################################
 
+matriz = [
+    ["2",5,-11,0],
+    ["-9",4,"Manolo",13],
+    [True, False,"Pepe",6]
+]
+
+print(matriz)
+
+###### ACCESO A ELEMENTOS(celdas) EN UNA MATRIZ --> matriz[fila][columna]
+print(matriz[0][2])
+print(matriz[0][3])
+print(matriz[1][3])
+print(matriz[1][2])
+print(matriz[2][2])
+print(matriz[2][1])
+
+# ACCESO A UNA FILA COMPLETA
+#Se imprime la ubicacion de la fila solamente y asi se imprime la fila completa
+print(matriz[2])
 
 
+# ACCESO AL ULTIMO ELEMENTO EN UNA FILA
+#el -1 significa que imprime el ultimo elemento de la fila seleccionada la [2]
+print(matriz[2][-1])
 
+
+# Recorrer matriz (bucle anidado (for))
+# FOR
+print("--- FOR ---")
+for fila in matriz: #para cada fila en la matriz
+    for col in fila: #para cada columna en la matriz
+        print(col, end=" | ") #El END agrega un caracter o espacio al final de cada col, sino seria un salto de linea
+        #print(col) #El print agrega un salto de linea por defecto al final
+
+print()
+print("--- WHILE ---")
+numFilas=0
+while numFilas< len(matriz): #Recorremos cada fila
+    numCol = 0
+    while numCol < len(matriz[numFilas]): #Recorremos columnas por filas
+        print(matriz[numFilas][numCol]) #Esto es imprimir valor de la posición de la fila y columna [Fila][columna]
+        numCol +=1
+    numFilas +=1
+
+imprimirFilasMatriz(matriz)
+
+matrizNueva = crearMatriz(5,6,"pepe")
+imprimirFilasMatriz(matrizNueva)
+
+matrizNueva2 = crearMatriz(3,3,True)
+imprimirFilasMatriz(matrizNueva2)
+
+matrizModificada = modificarValoresMatriz(matrizNueva, "X")
+imprimirFilasMatriz(matrizModificada)
+
+
+matrizEjercicios = [
+    [1,1,1],
+    [0,1,2],
+    [3,-1,0]
+]
+sumaMatriz = ejercicio1(matrizEjercicios)
+print(sumaMatriz)
+
+print(ejercicio2(matrizEjercicios,1))
+print(ejer3Matriz(matrizEjercicios,0))
+print(ejercicio5(matrizEjercicios))
 #########################################################################
 # Diccionarios
 #########################################################################
